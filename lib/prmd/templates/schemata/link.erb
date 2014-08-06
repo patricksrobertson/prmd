@@ -54,8 +54,8 @@ HTTP/1.1 <%= case link['rel']
   <%- elsif link.has_key?('targetSchema') && link['targetSchema'].has_key?('properties') %>
 <%= JSON.pretty_generate(schema.schema_example(link['targetSchema'])) %>
   <%- elsif link['rel'] == 'instances' %>
-<%= JSON.pretty_generate([schema.schemata_example(resource)]) %>
+<%= JSON.pretty_generate({"#{resource}s" => [schema.schemata_example(resource)]}) %>
   <%- else %>
-<%= JSON.pretty_generate(schema.schemata_example(resource)) %>
+<%= JSON.pretty_generate({resource => schema.schemata_example(resource)}) %>
   <%- end %>
 ```
