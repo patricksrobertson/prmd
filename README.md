@@ -97,6 +97,12 @@ You can also chain commands together as needed, e.g.:
 $ prmd combine --meta meta.json schemata/ | prmd verify | prmd doc --prepend overview.md > schema.md
 ```
 
+This is my favorite command:
+
+```console
+be prmd combine --meta meta.json schemata/ | be prmd verify | be prmd doc --prepend overview.md -a "Bearer 2177de64d3344ff6f4330b72a84106a50e15e1e2da1db6b9ee6db179e2d2136c" > README.md
+```
+
 See `prmd <command> --help` for additional usage details.
 
 ## File Layout
