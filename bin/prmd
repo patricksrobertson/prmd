@@ -23,6 +23,9 @@ commands = {
     opts.on("-c", "--content-type application/json", String, "Content-Type header") do |c|
       options[:content_type] = c
     end
+    opts.on("-a", "--authorization Bearer: ab3523adas", String, "Authorization header") do |a|
+      options[:authorization] = a
+    end
   end,
   init: OptionParser.new do |opts|
     opts.banner = "prmd init [options] <resource name>"
